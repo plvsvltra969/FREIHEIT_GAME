@@ -47,52 +47,52 @@ private States MyState;
 		else if (MyState == States.beating)					{state_beating ();}
 		else if (MyState == States.death)					{state_death ();} 
 		else if (MyState == States.hallway)					{state_hallway ();}
-		else if (MyState == States.right_hall)				{state_right_hall ();} 
-		else if (MyState == States.left_hall)				{state_left_hall ();} 
-		else if (MyState == States.guard_wait_right_hall)	{state_guard_wait_right_hall ();} 
-		else if (MyState == States.door_outside)			{state_door_outside ();} 
+		else if (MyState == States.right_hall)					{state_right_hall ();} 
+		else if (MyState == States.left_hall)					{state_left_hall ();} 
+		else if (MyState == States.guard_wait_right_hall)			{state_guard_wait_right_hall ();} 
+		else if (MyState == States.door_outside)				{state_door_outside ();} 
 		else if (MyState == States.street)					{state_street ();} 
 		else if (MyState == States.road)					{state_road();} 
 		else if (MyState == States.crowd)					{state_crowd();}
 		else if (MyState == States.alley)					{state_alley();} 
-		else if (MyState == States.id_checkpoint)			{state_id_checkpoint ();} 
-		else if (MyState == States.go_right_id_check)		{state_go_right_id_check ();} 
-		else if (MyState == States.go_left_id_check)		{state_go_left_id_check ();} 
-		else if (MyState == States.unarmed_move_forward)	{state_unarmed_move_forward ();} 
-		else if (MyState == States.encounter_unarmed)		{state_encounter_unarmed();}
-		else if (MyState == States.homeless_unarmed)		{state_homeless_unarmed ();} 
-		else if (MyState == States.pipe_weapon)				{state_pipe_weapon ();} 
-		else if (MyState == States.homeless_armed_1)		{state_homeless_armed_1 ();} 
-		else if (MyState == States.homeless_armed_2)		{state_homeless_armed_2 ();} 
-		else if (MyState == States.encounter_armed)			{state_encounter_armed();}
+		else if (MyState == States.id_checkpoint)				{state_id_checkpoint ();} 
+		else if (MyState == States.go_right_id_check)				{state_go_right_id_check ();} 
+		else if (MyState == States.go_left_id_check)				{state_go_left_id_check ();} 
+		else if (MyState == States.unarmed_move_forward)			{state_unarmed_move_forward ();} 
+		else if (MyState == States.encounter_unarmed)				{state_encounter_unarmed();}
+		else if (MyState == States.homeless_unarmed)				{state_homeless_unarmed ();} 
+		else if (MyState == States.pipe_weapon)					{state_pipe_weapon ();} 
+		else if (MyState == States.homeless_armed_1)				{state_homeless_armed_1 ();} 
+		else if (MyState == States.homeless_armed_2)				{state_homeless_armed_2 ();} 
+		else if (MyState == States.encounter_armed)				{state_encounter_armed();}
 		else if (MyState == States.attack)					{state_attack();} 
 		else if (MyState == States.respect)					{state_respect();} 
 		else if (MyState == States.join)					{state_join();} 
-		else if (MyState == States.dont_join)				{state_dont_join();} 
-		else if (MyState == States.mission_1)				{state_mission_1();}
-		else if (MyState == States.kill_sleeping_1)			{state_kill_sleeping_1();} 
-		else if (MyState == States.kill_sleeping_2)			{state_kill_sleeping_2();} 
-		else if (MyState == States.mission_2)				{state_mission_2();} 
-		else if (MyState == States.back_in_streets)			{state_back_in_streets ();} 
-		else if (MyState == States.seen_2_much)				{state_seen_2_much ();}
+		else if (MyState == States.dont_join)					{state_dont_join();} 
+		else if (MyState == States.mission_1)					{state_mission_1();}
+		else if (MyState == States.kill_sleeping_1)				{state_kill_sleeping_1();} 
+		else if (MyState == States.kill_sleeping_2)				{state_kill_sleeping_2();} 
+		else if (MyState == States.mission_2)					{state_mission_2();} 
+		else if (MyState == States.back_in_streets)				{state_back_in_streets ();} 
+		else if (MyState == States.seen_2_much)					{state_seen_2_much ();}
 		else if (MyState == States.wander)					{state_wander ();} 
-		else if (MyState == States.newspaper)				{state_newspaper ();} 
-		else if (MyState == States.id_check_spotted_left)	{state_id_check_spotted_left ();} 
-		else if (MyState == States.try_2_run)				{state_try_2_run ();} 
-		else if (MyState == States.take_help_offer)			{state_take_help_offer ();}
-		else if (MyState == States.sewer_left)				{state_sewer_left ();} 
-		else if (MyState == States.sewer_right)				{state_sewer_right ();} 
-		else if (MyState == States.sewer_swim)				{state_sewer_swim ();}
-		else if (MyState == States.sewer_shimmy)			{state_sewer_shimmy ();} 
-		else if (MyState == States.sewer_gates)				{state_sewer_gates ();} 
-		else if (MyState == States.sewer_king)				{state_sewer_king ();} 
-		else if (MyState == States.sewer_escape)			{state_sewer_escape ();}
+		else if (MyState == States.newspaper)					{state_newspaper ();} 
+		else if (MyState == States.id_check_spotted_left)			{state_id_check_spotted_left ();} 
+		else if (MyState == States.try_2_run)					{state_try_2_run ();} 
+		else if (MyState == States.take_help_offer)				{state_take_help_offer ();}
+		else if (MyState == States.sewer_left)					{state_sewer_left ();} 
+		else if (MyState == States.sewer_right)					{state_sewer_right ();} 
+		else if (MyState == States.sewer_swim)					{state_sewer_swim ();}
+		else if (MyState == States.sewer_shimmy)				{state_sewer_shimmy ();} 
+		else if (MyState == States.sewer_gates)					{state_sewer_gates ();} 
+		else if (MyState == States.sewer_king)					{state_sewer_king ();} 
+		else if (MyState == States.sewer_escape)				{state_sewer_escape ();}
 		else if (MyState == States.forest)					{state_forest ();} 
-		else if (MyState == States.live_off_land)			{state_live_off_land ();}
+		else if (MyState == States.live_off_land)				{state_live_off_land ();}
 		else if (MyState == States.travel)					{state_travel ();} 
-		else if (MyState == States.checkpoint_id_2)			{state_checkpoint_id_2 ();} 
-		else if (MyState == States.other_direction_endgame)	{state_other_direction_endgame ();} 
-		else if (MyState == States.dronestrike)				{state_dronestrike ();} 
+		else if (MyState == States.checkpoint_id_2)				{state_checkpoint_id_2 ();} 
+		else if (MyState == States.other_direction_endgame)			{state_other_direction_endgame ();} 
+		else if (MyState == States.dronestrike)					{state_dronestrike ();} 
 
 		
 	} 
