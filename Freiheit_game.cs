@@ -7,13 +7,19 @@ public class TextController : MonoBehaviour {
 
 public Text text;
 
-private enum States {title, room, window, door, toilet, noise, beating, death, hallway, left_hall, right_hall, locked_door, guard_wait_right_hall, guard_wait_left_hall,
-					door_outside, street, road, alley, crowd, id_checkpoint, go_right_id_check, go_left_id_check, unarmed_move_forward, encounter_unarmed,
-					homeless_unarmed, pipe_weapon, homless_armed_1, homeless_armed_2, encounter_armed, attack, respect, join, dont_join, mission_1, 
+
+//STATES USED THROUGHOUT THE GAME  
+
+
+private enum States {title, room, window, door, toilet, noise, beating, death, hallway, left_hall, right_hall, guard_wait_right_hall,
+					door_outside,street, road, alley, crowd, id_checkpoint, go_right_id_check, go_left_id_check, unarmed_move_forward, encounter_unarmed,
+					homeless_unarmed, pipe_weapon, homeless_armed_1, homeless_armed_2, encounter_armed, attack, respect, join, dont_join, mission_1, 
 					kill_sleeping_1, kill_sleeping_2, mission_2, back_in_streets, seen_2_much, wander, newspaper, id_check_spotted_left, try_2_run, 
 					take_help_offer, sewer_left, sewer_right, sewer_swim, sewer_shimmy, sewer_gates, sewer_king, sewer_escape, forest, live_off_land, 
 					travel, checkpoint_id_2, other_direction_endgame, dronestrike 
 					};
+
+
 private States MyState;
 	// Use this for initialization
 	
@@ -22,12 +28,15 @@ private States MyState;
 	
 	void Start () {
 		
-		if (Input.GetKeyDown(KeyCode.Space)) { 
-			MyState = States.room;	
-			}		
+		if (Input.GetKeyDown(KeyCode.Space)) {MyState = States.room;}		
 	}
 	
-	// Update is called once per frame
+	
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//IF / ELSE IF STATEMENTS REGUARDING GAMESTATES / "ROOMS" 
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
 	void Update () {
 		if (MyState == States.title)						{state_title ();}
 		else if (MyState == States.room)					{state_room ();} 
@@ -40,14 +49,12 @@ private States MyState;
 		else if (MyState == States.hallway)					{state_hallway ();}
 		else if (MyState == States.right_hall)				{state_right_hall ();} 
 		else if (MyState == States.left_hall)				{state_left_hall ();} 
-		else if (MyState == States.locked_door)				{state_locked_door ();} 
 		else if (MyState == States.guard_wait_right_hall)	{state_guard_wait_right_hall ();} 
-		else if (MyState == States.guard_wait_left_hall)	{state_guard_wait_left_hall ();}
 		else if (MyState == States.door_outside)			{state_door_outside ();} 
 		else if (MyState == States.street)					{state_street ();} 
-		else if (MyState == States.road)					{state_road ();} 
-		else if (MyState == States.alley)					{state_alley ();} 
-		else if (MyState == States.crowd)					{state_crowd ();}
+		else if (MyState == States.road)					{state_road();} 
+		else if (MyState == States.crowd)					{state_crowd();}
+		else if (MyState == States.alley)					{state_alley();} 
 		else if (MyState == States.id_checkpoint)			{state_id_checkpoint ();} 
 		else if (MyState == States.go_right_id_check)		{state_go_right_id_check ();} 
 		else if (MyState == States.go_left_id_check)		{state_go_left_id_check ();} 
@@ -55,17 +62,17 @@ private States MyState;
 		else if (MyState == States.encounter_unarmed)		{state_encounter_unarmed();}
 		else if (MyState == States.homeless_unarmed)		{state_homeless_unarmed ();} 
 		else if (MyState == States.pipe_weapon)				{state_pipe_weapon ();} 
-		else if (MyState == States.homless_armed_1)			{state_homless_armed_1 ();} 
+		else if (MyState == States.homeless_armed_1)		{state_homeless_armed_1 ();} 
 		else if (MyState == States.homeless_armed_2)		{state_homeless_armed_2 ();} 
 		else if (MyState == States.encounter_armed)			{state_encounter_armed();}
-		else if (MyState == States.attack)					{state_attack ();} 
-		else if (MyState == States.respect)					{state_respect ();} 
-		else if (MyState == States.join)					{state_join ();} 
-		else if (MyState == States.dont_join)				{state_dont_join ();} 
-		else if (MyState == States.mission_1)				{state_mission_1 ();}
-		else if (MyState == States.kill_sleeping_1)			{state_kill_sleeping_1 ();} 
-		else if (MyState == States.kill_sleeping_2)			{state_kill_sleeping_2 ();} 
-		else if (MyState == States.mission_2)				{state_mission_2 ();} 
+		else if (MyState == States.attack)					{state_attack();} 
+		else if (MyState == States.respect)					{state_respect();} 
+		else if (MyState == States.join)					{state_join();} 
+		else if (MyState == States.dont_join)				{state_dont_join();} 
+		else if (MyState == States.mission_1)				{state_mission_1();}
+		else if (MyState == States.kill_sleeping_1)			{state_kill_sleeping_1();} 
+		else if (MyState == States.kill_sleeping_2)			{state_kill_sleeping_2();} 
+		else if (MyState == States.mission_2)				{state_mission_2();} 
 		else if (MyState == States.back_in_streets)			{state_back_in_streets ();} 
 		else if (MyState == States.seen_2_much)				{state_seen_2_much ();}
 		else if (MyState == States.wander)					{state_wander ();} 
@@ -90,6 +97,20 @@ private States MyState;
 		
 	} 
 	
+	
+	private void Update()
+	{
+		// check for escape key
+		if(Input.GetKeyDown(KeyCode.Escape){Application.Quit();}
+			// quit the application
+	}
+
+	
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// TITLE CARD
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------		
 	void state_title (){ 
 		text.text = "\n \n 'F R E I H E I T' - Please press [SPACEBAR] to begin your journey. \n \n \n \n" + "------------------ \nCopyright © 2018 by Cody James Ryan " +
 					"All rights reserved. No part of this publication may be reproduced, distributed, or transmitted in any form or by any means, " + 
@@ -97,8 +118,15 @@ private States MyState;
 					"publisher, except in the case of brief quotations embodied in critical reviews and certain other noncommercial " +
 					"uses permitted by copyright law. For permission requests, write to the publisher, addressed " + 
 					"“Attention: Permissions Coordinator,” at the email below. \n \n " + "PlVSVLTRA969@GMAIL.COM \n ------------------"; 
-				if (Input.GetKeyDown(KeyCode.Space)) {MyState = States.room;}
+				if (Input.GetKeyDown(KeyCode.Space)) {MyState = States.room;}  //beginning room
 				}
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// FIRST ACT / BEGINNING BUILDING SCENE
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+	
+	
 	void state_room () { 
 		text.text="Dawn breaks on a new day and you awaken in a groggy stupor, the sun is filling the small cold room you find yourself in. " +
 					"Your head hurts and you don't remember how you arrived here. As you shake off the sleep, you hear voices in the distance talking. " + 
@@ -146,7 +174,7 @@ private States MyState;
 					"and begin pummling you with a renewed vigor. Your trying your best to pick up your teeth from the ground between blows but then a particularly nasty swing cracks your eye socket and you lose vision. " +
 					"The sound of night sticks falling on bruised flesh and broken bone are the last sounds you hear as you black out and never regain consiousness. \n ------------------ \n \n TRAGIC! Play again? " +
 					"\n \n ------------------Press------------------ \n [Y] to return to the cell and try a different thread of fate"; 
-	if (Input.GetKeyDown(KeyCode.Y)) {MyState = States.room;}
+		if (Input.GetKeyDown(KeyCode.Y)) {MyState = States.room;}
 		}
 	void state_hallway () {
 		text.text="You manage to escape into the hallway, unnoticed for the moment. Looking around you, there is a hallway to both the left and the right of you, and both ends of the hallway have a door. You don't " + 
@@ -158,8 +186,8 @@ private States MyState;
 	void state_right_hall () {
 		text.text="As you journey down the right hallway, you are met with a closed steel door. As you explore the interior of the building there is no noticable artwork, or decoration, or anything! " +
 					"It's as drab as a prison! You reach for the steel door in front of you and try the handle, only to discover that the door is locked! Both your time and your options seems to be limited. " + 
-				"you'll need to reach a decision quickly!!\n ------------------ \n \n ------------------Press------------------ \n [X] to go back and try to fight the guards, because 'fuck it.' \n [U] to try to lockpick the door quickly. \n [L] to dash down " +
-					 "the left hall and attempt the other door"; 
+					"you'll need to reach a decision quickly!!\n ------------------ \n \n ------------------Press------------------ \n [X] to go back and try to fight the guards, because 'fuck it.' \n  " +
+					"[U] to try to lockpick the door quickly. \n [L] to dash down the left hall and attempt the other door"; 
 		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.death;}
 		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.guard_wait_right_hall;}
 		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.left_hall;} 
@@ -172,10 +200,72 @@ private States MyState;
 					"\n ------------------ \n \n ------------------Press------------------ \n [Y] to return to the cell and try a different thread of fate";
 		if (Input.GetKeyDown(KeyCode.Y)) {MyState = States.room;}
 		}
+	void state_left_hall () {
+		text.text=" As you journey down the left hallway, you are met with a closed steel door. As you rush towards the door you stop and take a second to appreciate the architecture " +
+					" You consider your options. You could try to fight the men who were previously beating on you, you could try the door, or you could contemplate your situation a little longer. " +
+					" \n ------------------ \n \n ------------------Press------------------ \n [X] to fight the men pursuing you \n [D] to try the door \n Press nothing to contemplate longer my lad, no rush.";
+		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.death;}
+		if (Input.GetKeyDown(KeyCode.D)) {MyState = States.door_outside;} 
+		}
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//SECOND ACT / OUTSIDE DECISIONS / GANG SIDEQUEST
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
 	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
+	void state_door_outside () {
+		text.text=" You rush forward and attempt the door and find it was not only unlocked, but also not closed completely and you tumble forward and through the door stumbling into what appears to be a busy street in the middle of a bustling city " + 
+					"uncertain of what to do next, and hearing the guards behind you making a commotion, presumably because they've realized your escape, you know your time is limited. Your two immediate options appear to be " + 
+					" a busy street full of cars and pedestrians, or a seedy alleyway that's not as populated \n ------------------ \n \n ------------------Press------------------ \n [S] to take the streeet \n [A] to enter the alleyway"; 
+		if (Input.GetKeyDown(KeyCode.S)) {MyState = States.street;}
+		if (Input.GetKeyDown(KeyCode.A)) {MyState = States.alley;} 
+		}
+	void state_street () {
+		text.text=" You rush down the street and into the crowd, the stench of the city begins to fill your nose as you immerse yourself further. You consider crossing the street, it looks like there's less people over there anyways. " +
+				"You could also continue to push on forward through this thick and smelly crowd of people, a loud roaring WHOOOSH interrupts your thoughts for a moment as a swarm of drones buzz not too far above everybodies heads, as you observe them they " +
+				"appear to be scanning the crowds! You decide you ought to maybe hurry a little faster once again.  \n ------------------ \n \n ------------------Press------------------ \n [R] to cross the road \n [C] to  continue wriggling through the crowd."; 		
+		if (Input.GetKeyDown(KeyCode.R)) {MyState = States.road;}
+		if (Input.GetKeyDown(KeyCode.C)) {MyState = States.crowd;} 
+		}
+//developers note: This is my first game and really my first hands-on attempts at learning C# / continuing my education in C# and I just want to note that this is tedious as fuck, or at least more work than I imagined initially when I planned it out and 
+//frankly with as lengthy as I made it, it's still going to be incredibly difficult to convey some kind of narrative, so sorry in advance if this sucks. 
+	void state_road () {
+		text.text=" You cannot stand the wretched crowd of people any longer and rush forward into the road. Perhaps on another day your luck would have been better, but you happen to have forgotten to look both ways before crossing on this particular " + 
+					"day. It wasn't painful for long, relatively speaking. Dinosaurs ruled the earth for 150 Millon years, but you were only in agony for an incredibly breif 17 days as the local medical facility attempted to revive you, only to discover " +
+					"in the end that you couldn't afford further medical treatment, and thus were denied further care.\n ------------------ PLAY AGAIN? \n \n ------------------Press------------------ \n [Y] to return to the cell and try a different thread of fate"; 		
+		if (Input.GetKeyDown(KeyCode.Y)) {MyState = States.room;}
+		}
+	void state_crowd() {
+		text.text=" You push your way through the crowd, determined! Certainly the whole city cannot be one large writhing mass of overcrowded city blocks? As you make your way through the people, a couple shady indivduals try to offer you various " + 
+					"wares and trinkets out of the pockets of their jackets. One man offers you a jeweled fish, another offers to sell you what he claims is the city's original blueprints, but upon further inspection it appears to be a doodle done by " + 
+					"a child no older than 11 years old. You have a hard time understanding the city's strange ways and stranger populace. \n ------------------ \n \n ------------------Press------------------ \n [Spacebar] to continue  \n  " +
+					"or press no keys to browse the merchants wares a little longer. That was probably the nicest jeweled fish you've ever seen."; 
+			if (Input.GetKeyDown(KeyCode.Space)) {MyState = States.id_checkpoint;}
+		}
+	void state_alley () {
+		text.text=" You rush down the dark and seedy alleyway in hopes of evading the pursuit. As you enter you notice the men who were following you have obviously lost your trail, and you can take your time and be a bit more leisurely moving forward " +
+					"You notice in the alley way, you could stop to inspect what appears to be a homeless man sitting inside of a cardboard box with the words HOME scrawled on the side in poor handwriting, and a pipe laying on the ground catches your eye " +
+					" \n ------------------ \n \n ------------------Press------------------ \n [H] to investgate the Homeless man \n [P] to investigate the pipe \n [F] to move forward and ignore these obvious distractions ";
+		if (Input.GetKeyDown(KeyCode.H)) {MyState = States.homeless_unarmed;}
+		if (Input.GetKeyDown(KeyCode.P)) {MyState = States.pipe_weapon;}
+		if (Input.GetKeyDown(KeyCode.F)) {MyState = States.unarmed_move_forward;} 
+		}
+	void state_homeless_unarmed () {
+		text.text=" You approach the man in the cardboard box, and he begins whispering something to you but you can't quite make out what it is, so you move in closer to listen to him and you ask him politely to repeat himself, and upon your request " +
+					"The man immediately begins spitting large wads of phlegm at you, the first one hitting you directly in the face. You reel in disgust and back away from the homeless man. \n ------------------ \n " +
+					"\n ------------------Press------------------ \n [P] to investigate the pipe \n [F] to move forward \n Take no action to hang out and observe the bum for a while in his natural habitat! ";
+		if (Input.GetKeyDown(KeyCode.P)) {MyState = States.pipe_weapon;}
+		if (Input.GetKeyDown(KeyCode.F)) {MyState = States.unarmed_move_forward;}
+		}
+	void state_pipe_weapon () {
+		text.text=" You approach the pipe on the ground and pick it up, it's covered in more rust than you had previously expected but, it's rather heavy and you think it could make for a particularly useful weapon, at least for a couple dozen swings " +
+		"\n ------------------ \n \n ------------------Press------------------ \n [H] to attack the homeless man \n [M] to move forward down the alley"; 
+		if (Input.GetKeyDown(KeyCode.H)) {MyState = States.homeless_armed_1;}
+		if (Input.GetKeyDown(KeyCode.M)) {MyState = States.encounter_armed;}		
+		}
+		void state_homeless_armed_1 () {
+		text.text=" You approach the homeless man, hand tightly gripping your newfound pipe. It's not the nicest pipe in the world, but goddamnit it's YOUR pipe. The more you look at the homeless man, the more you are filled with disgust and contempt " +
+					"You know what must be done..   \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
 			"the left hall and attempt the other door"; 
 		
 		
@@ -184,109 +274,7 @@ private States MyState;
 		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
 		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
 		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
+		}
 	
 	
 	void state_STATEHERE () {
