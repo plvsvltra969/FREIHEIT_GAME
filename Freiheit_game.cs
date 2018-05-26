@@ -13,7 +13,7 @@ public Text text;
 
 private enum States {title, room, window, door, toilet, noise, beating, death, hallway, left_hall, right_hall, guard_wait_right_hall,
 					door_outside,street, road, alley, crowd, id_checkpoint, go_right_id_check, go_left_id_check, unarmed_move_forward, encounter_unarmed,
-					homeless_unarmed, pipe_weapon, homeless_armed_1, homeless_armed_2, encounter_armed, attack, respect, join, dont_join, mission_1, 
+					homeless_unarmed, pipe_weapon, homeless_armed_1, encounter_armed, attack, respect, join, dont_join, mission_1, 
 					kill_sleeping_1, kill_sleeping_2, mission_2, back_in_streets, seen_2_much, wander, newspaper, id_check_spotted_left, try_2_run, 
 					take_help_offer, sewer_left, sewer_right, sewer_swim, sewer_shimmy, sewer_gates, sewer_king, sewer_escape, forest, live_off_land, 
 					travel, checkpoint_id_2, other_direction_endgame, dronestrike 
@@ -47,63 +47,58 @@ private States MyState;
 		else if (MyState == States.beating)					{state_beating ();}
 		else if (MyState == States.death)					{state_death ();} 
 		else if (MyState == States.hallway)					{state_hallway ();}
-		else if (MyState == States.right_hall)					{state_right_hall ();} 
-		else if (MyState == States.left_hall)					{state_left_hall ();} 
-		else if (MyState == States.guard_wait_right_hall)			{state_guard_wait_right_hall ();} 
-		else if (MyState == States.door_outside)				{state_door_outside ();} 
+		else if (MyState == States.right_hall)				{state_right_hall ();} 
+		else if (MyState == States.left_hall)				{state_left_hall ();} 
+		else if (MyState == States.guard_wait_right_hall)	{state_guard_wait_right_hall ();} 
+		else if (MyState == States.door_outside)			{state_door_outside ();} 
 		else if (MyState == States.street)					{state_street ();} 
 		else if (MyState == States.road)					{state_road();} 
 		else if (MyState == States.crowd)					{state_crowd();}
 		else if (MyState == States.alley)					{state_alley();} 
-		else if (MyState == States.id_checkpoint)				{state_id_checkpoint ();} 
-		else if (MyState == States.go_right_id_check)				{state_go_right_id_check ();} 
-		else if (MyState == States.go_left_id_check)				{state_go_left_id_check ();} 
-		else if (MyState == States.unarmed_move_forward)			{state_unarmed_move_forward ();} 
-		else if (MyState == States.encounter_unarmed)				{state_encounter_unarmed();}
-		else if (MyState == States.homeless_unarmed)				{state_homeless_unarmed ();} 
-		else if (MyState == States.pipe_weapon)					{state_pipe_weapon ();} 
-		else if (MyState == States.homeless_armed_1)				{state_homeless_armed_1 ();} 
-		else if (MyState == States.homeless_armed_2)				{state_homeless_armed_2 ();} 
-		else if (MyState == States.encounter_armed)				{state_encounter_armed();}
-		else if (MyState == States.attack)					{state_attack();} 
-		else if (MyState == States.respect)					{state_respect();} 
-		else if (MyState == States.join)					{state_join();} 
-		else if (MyState == States.dont_join)					{state_dont_join();} 
-		else if (MyState == States.mission_1)					{state_mission_1();}
-		else if (MyState == States.kill_sleeping_1)				{state_kill_sleeping_1();} 
-		else if (MyState == States.kill_sleeping_2)				{state_kill_sleeping_2();} 
-		else if (MyState == States.mission_2)					{state_mission_2();} 
-		else if (MyState == States.back_in_streets)				{state_back_in_streets ();} 
-		else if (MyState == States.seen_2_much)					{state_seen_2_much ();}
-		else if (MyState == States.wander)					{state_wander ();} 
-		else if (MyState == States.newspaper)					{state_newspaper ();} 
-		else if (MyState == States.id_check_spotted_left)			{state_id_check_spotted_left ();} 
-		else if (MyState == States.try_2_run)					{state_try_2_run ();} 
-		else if (MyState == States.take_help_offer)				{state_take_help_offer ();}
-		else if (MyState == States.sewer_left)					{state_sewer_left ();} 
-		else if (MyState == States.sewer_right)					{state_sewer_right ();} 
-		else if (MyState == States.sewer_swim)					{state_sewer_swim ();}
-		else if (MyState == States.sewer_shimmy)				{state_sewer_shimmy ();} 
-		else if (MyState == States.sewer_gates)					{state_sewer_gates ();} 
-		else if (MyState == States.sewer_king)					{state_sewer_king ();} 
-		else if (MyState == States.sewer_escape)				{state_sewer_escape ();}
-		else if (MyState == States.forest)					{state_forest ();} 
-		else if (MyState == States.live_off_land)				{state_live_off_land ();}
-		else if (MyState == States.travel)					{state_travel ();} 
-		else if (MyState == States.checkpoint_id_2)				{state_checkpoint_id_2 ();} 
-		else if (MyState == States.other_direction_endgame)			{state_other_direction_endgame ();} 
-		else if (MyState == States.dronestrike)					{state_dronestrike ();} 
-
+		//else if (MyState == States.id_checkpoint)			{state_id_checkpoint ();} 
+		//else if (MyState == States.go_right_id_check)		{state_go_right_id_check ();} 
+		//else if (MyState == States.go_left_id_check)		{state_go_left_id_check ();} 
+		else if (MyState == States.unarmed_move_forward)	{state_unarmed_move_forward ();} 
+		//else if (MyState == States.encounter_unarmed)		{state_encounter_unarmed();}
+		else if (MyState == States.homeless_unarmed)		{state_homeless_unarmed ();} 
+		else if (MyState == States.pipe_weapon)				{state_pipe_weapon ();} 
+		else if (MyState == States.homeless_armed_1)		{state_homeless_armed_1 ();} 
+		//else if (MyState == States.encounter_armed)		{state_encounter_armed();}
+		//else if (MyState == States.attack)				{state_attack();} 
+		//else if (MyState == States.respect)				{state_respect();} 
+		//else if (MyState == States.join)					{state_join();} 
+		//else if (MyState == States.dont_join)				{state_dont_join();} 
+		//else if (MyState == States.mission_1)				{state_mission_1();}
+		//else if (MyState == States.kill_sleeping_1)		{state_kill_sleeping_1();} 
+		//else if (MyState == States.kill_sleeping_2)		{state_kill_sleeping_2();} 
+		//else if (MyState == States.mission_2)				{state_mission_2();} 
+		//else if (MyState == States.back_in_streets)		{state_back_in_streets ();} 
+		//else if (MyState == States.seen_2_much)			{state_seen_2_much ();}
+		//else if (MyState == States.wander)				{state_wander ();} 
+		//else if (MyState == States.newspaper)				{state_newspaper ();} 
+		//else if (MyState == States.id_check_spotted_left)	{state_id_check_spotted_left ();} 
+		//else if (MyState == States.try_2_run)				{state_try_2_run ();} 
+		//else if (MyState == States.take_help_offer)		{state_take_help_offer ();}
+		//else if (MyState == States.sewer_left)			{state_sewer_left ();} 
+		//else if (MyState == States.sewer_right)			{state_sewer_right ();} 
+		//else if (MyState == States.sewer_swim)			{state_sewer_swim ();}
+		//else if (MyState == States.sewer_shimmy)			{state_sewer_shimmy ();} 
+		//else if (MyState == States.sewer_gates)			{state_sewer_gates ();} 
+		//else if (MyState == States.sewer_king)			{state_sewer_king ();} 
+		//else if (MyState == States.sewer_escape)			{state_sewer_escape ();}
+		//else if (MyState == States.forest)				{state_forest ();} 
+		//else if (MyState == States.live_off_land)			{state_live_off_land ();}
+		//else if (MyState == States.travel)				{state_travel ();} 
+		//else if (MyState == States.checkpoint_id_2)		{state_checkpoint_id_2 ();} 
+		//else if (MyState == States.other_direction_endgame){state_other_direction_endgame ();} 
+		//else if (MyState == States.dronestrike)			{state_dronestrike ();} 
+		if(Input.GetKeyDown(KeyCode.Escape)){Application.Quit();}
+		
 		
 	} 
 	
 	
-	private void Update()
-	{
-		// check for escape key
-		if(Input.GetKeyDown(KeyCode.Escape){Application.Quit();}
-			// quit the application
-	}
+
 
 	
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -239,8 +234,10 @@ private States MyState;
 		text.text=" You push your way through the crowd, determined! Certainly the whole city cannot be one large writhing mass of overcrowded city blocks? As you make your way through the people, a couple shady indivduals try to offer you various " + 
 					"wares and trinkets out of the pockets of their jackets. One man offers you a jeweled fish, another offers to sell you what he claims is the city's original blueprints, but upon further inspection it appears to be a doodle done by " + 
 					"a child no older than 11 years old. You have a hard time understanding the city's strange ways and stranger populace. \n ------------------ \n \n ------------------Press------------------ \n [Spacebar] to continue  \n  " +
-					"or press no keys to browse the merchants wares a little longer. That was probably the nicest jeweled fish you've ever seen."; 
-			if (Input.GetKeyDown(KeyCode.Space)) {MyState = States.id_checkpoint;}
+					"or press no keys to browse the merchants wares a little longer. That was probably the nicest jeweled fish you've ever seen. \n This adventure path will be continued in a future update! Press [F] for 'Fuck you Lazy Dev! " +
+					"to return to the cell and try a different thread of fate"; 
+			//if (Input.GetKeyDown(KeyCode.Space)) {MyState = States.id_checkpoint;}
+			if (Input.GetKeyDown (KeyCode.F)) {MyState= States.room;} 
 		}
 	void state_alley () {
 		text.text=" You rush down the dark and seedy alleyway in hopes of evading the pursuit. As you enter you notice the men who were following you have obviously lost your trail, and you can take your time and be a bit more leisurely moving forward " +
@@ -263,502 +260,31 @@ private States MyState;
 		if (Input.GetKeyDown(KeyCode.H)) {MyState = States.homeless_armed_1;}
 		if (Input.GetKeyDown(KeyCode.M)) {MyState = States.encounter_armed;}		
 		}
-		void state_homeless_armed_1 () {
+	void state_homeless_armed_1 () {
 		text.text=" You approach the homeless man, hand tightly gripping your newfound pipe. It's not the nicest pipe in the world, but goddamnit it's YOUR pipe. The more you look at the homeless man, the more you are filled with disgust and contempt " +
-					"You know what must be done..   \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
+					"You know what must be done.. You approach the bum, and, with pipe in hand, you sit down and lecture him about investments and budget mangment. As you're in the middle of discussing the importance of " +
+					"diversifying your portfolio when you notice the wretch has fallen asleep. You contemplate beating him to death with you pipe but realize he's not worth the effort, nor the wear on your pipe" +
+					"  \n ------------------ \n \n ------------------Press------------------ \n [SPACEBAR] to move forward ";
+		if (Input.GetKeyDown(KeyCode.Space)) {MyState = States.encounter_armed;}
+		}
+	void state_unarmed_move_forward () {
+		text.text=" You rush down the alley into action! 'What's down this way?' you wonder as you dash ahead. *BAM* You are looking at a particularly fat pidgeon perched on " +
+				"a nearby roof when you collide heavily with a garbage can and create a loud clatter. You attract the attention of a local gang of ne'er-do-wells. They rush out of their building and " +
+					"come and senselessly beat you to death! Cruel fate. They too are dissapointed when they rummage through your pockets only to find them empty. " +
+					"  \n ------------------ \n \n ------------------Press------------------ \n [Y] to return to the cell and try a different thread of fate";
+		if (Input.GetKeyDown(KeyCode.Y)) {MyState = States.room;}
 		}
 	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
+	//EASY COPY+PASTE FORMAT CODE FOR EXPANDING FUTURE CONTENT 
+	//void state_STATEHERE () {
+		//text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
+			//"the left hall and attempt the other door"; 
 		
 		
 		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
+		//if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
+		//if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
+		//if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
 		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-	
-	void state_STATEHERE () {
-		text.text=" XXXTEXTXXX \n ------------------ \n \n ------------------Press------------------ \n BUTTON \n BUTTON \n BUTTON " +
-			"the left hall and attempt the other door"; 
-		
-		
-		
-		if (Input.GetKeyDown(KeyCode.X)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.U)) {MyState = States.;}
-		if (Input.GetKeyDown(KeyCode.L)) {MyState = States.;} 
-		
-	}
-	
-}	
+	//}
+}
